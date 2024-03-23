@@ -30,7 +30,10 @@ public class BinarySearch {
         int e = arr.length;
 
         for(int i = s; i<e;i++){
-            int mid = (s+e)/2;
+            //edit 01 - the formula breaks when used on large values as the int has fixed size;
+            //int mid = (s+e)/2;
+
+            int mid = s+(e-s)/2;//this one is better
 
             if(arr[mid]==target){
                 res = mid;
