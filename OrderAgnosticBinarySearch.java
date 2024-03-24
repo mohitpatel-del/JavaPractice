@@ -32,10 +32,10 @@ public class OrderAgnosticBinarySearch
 
 
     }
-    static int binaryS(int[] arr, int target){
+     static int binaryS(int[] arr, int target){
         int res = -1;
         int s = 0;
-        int e = arr.length;
+        int e = arr.length-1;
 
         for(int i = s; i<e;i++){
             int mid = s+(e-s)/2;//this one is better
@@ -45,14 +45,14 @@ public class OrderAgnosticBinarySearch
                 break;
             }
 
-           else if(arr[s]>arr[e-1]){
+            else if(arr[s]>arr[e]){
                 if(arr[mid]>target) {
                     s=mid;
                 } else if (arr[mid]<target) {
                     e=mid;
                 }
             }
-            else if(arr[s]<arr[e-1]){
+            else if(arr[s]<arr[e]){
                 if(arr[mid]>target) {
                     e=mid;
                 } else if (arr[mid]<target) {
