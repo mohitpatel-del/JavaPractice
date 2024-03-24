@@ -1,8 +1,8 @@
 public class CeilingOfNum {
     public static void main(String[] args) {
-        int[] arr = {5,7,9,11,15,20,25,30,35,40,45};
+        int[] arr = {4,5,7,9,11,15};
 
-        System.out.println(celing(arr,39));
+        System.out.println(celing(arr,3));
 
     }
     static int celing(int[] arr,int target) {
@@ -16,10 +16,14 @@ public class CeilingOfNum {
                 break;
             } else if ((arr[mid]<target && arr[mid+1]>target)) {
                 res = mid+1;
-            }else if (arr[mid]>target) {
+            } else if (arr[mid]>target) {
                 e=mid;
             } else if (arr[mid]<target) {
                 s=mid;
+            }
+
+            if(e==i) {
+                res=s;
             }
         }
 
