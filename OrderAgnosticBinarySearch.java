@@ -45,14 +45,14 @@ public class OrderAgnosticBinarySearch
                 break;
             }
 
-            else if(arr[0]>arr[arr.length-1]){
+           else if(arr[s]>arr[e-1]){
                 if(arr[mid]>target) {
                     s=mid;
                 } else if (arr[mid]<target) {
                     e=mid;
                 }
             }
-            else if(arr[0]<arr.length-1){
+            else if(arr[s]<arr[e-1]){
                 if(arr[mid]>target) {
                     e=mid;
                 } else if (arr[mid]<target) {
