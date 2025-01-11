@@ -1,32 +1,24 @@
 public class CeilingOfNum {
     public static void main(String[] args) {
-        int[] arr = {4,5,7,9,11,15};
+        int[] arr = new int[]{8,10,13,15,17};
+        int ans = searchInsert(arr,11);
 
-        System.out.println(celing(arr,3));
+        System.out.println(arr[ans]);
 
     }
-    static int celing(int[] arr,int target) {
-        int res = -1;
-        int s = 0;
-        int e = arr.length-1;
-        for(int i =s; i<e;i++){
-            int mid = s+(e-s)/2;
-            if(arr[mid]==target){
-                res = mid;
-                break;
-            } else if ((arr[mid]<target && arr[mid+1]>target)) {
-                res = mid+1;
-            } else if (arr[mid]>target) {
-                e=mid;
-            } else if (arr[mid]<target) {
-                s=mid;
-            }
-
-            if(e==i) {
-                res=s;
-            }
+    public static int searchInsert(int[] nums, int target) {
+        int start = 0;
+        int end = nums.length -1;
+        while(start <= end)
+        {
+            int mid = start + (end - start )/2;
+            if(nums[mid] == target )
+                return mid;
+            else if(nums[mid] < target)
+                start = mid+1;
+            else
+                end = end-1;
         }
-
-        return arr[res];
+        return start ;
     }
 }

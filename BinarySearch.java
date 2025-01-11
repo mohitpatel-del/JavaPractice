@@ -24,15 +24,26 @@ public class BinarySearch {
 
 
     }
+
+
     static int binaryS(int[] arr, int target){
         int res = 0;
         int s = 0;
         int e = arr.length;
 
-        for(int i = s; i<e;i++){
-            //edit 01 - the formula breaks when used on large values as the int has fixed size;
-            //int mid = (s+e)/2;
-
+//        for(int i = s; i<e;i++){
+//            int mid = s+(e-s)/2;//this one is better
+//
+//            if(arr[mid]==target){
+//                res = mid;
+//                break;
+//            } else if(arr[mid]>target) {
+//                e=mid;
+//            } else if (arr[mid]<target) {
+//                s=mid;
+//            }
+//        }
+        while(s<e) {
             int mid = s+(e-s)/2;//this one is better
 
             if(arr[mid]==target){

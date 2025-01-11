@@ -32,7 +32,7 @@ public class OrderAgnosticBinarySearch
 
 
     }
-     static int binaryS(int[] arr, int target){
+    static int binaryS(int[] arr, int target){
         int res = -1;
         int s = 0;
         int e = arr.length-1;
